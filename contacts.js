@@ -38,8 +38,9 @@ function removeContact(contactId) {
   // ...твій код
 }
 
-const addContact = async (name, email, phone) => {
+const addContact = async (id, name, email, phone) => {
   const newContactData = {
+    id,
     name,
     email,
     phone,

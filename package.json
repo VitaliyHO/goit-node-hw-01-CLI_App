@@ -11,7 +11,8 @@
   "author": "VitaliyHO",
   "license": "ISC",
   "dependencies": {
-    "commander": "^9.5.0"
+    "commander": "^9.5.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
