@@ -3,7 +3,6 @@ const path = require("path");
 
 const contactsPath = path.join(__dirname, "db", "contacts.json");
 
-// // TODO: задокументувати кожну функцію
 
 async function fetchContacts() {
   try {
@@ -34,8 +33,15 @@ async function getContactById(contactId) {
   }
 }
 
-function removeContact(contactId) {
-  // ...твій код
+async function removeContact(contactId) {
+  try {
+    const contactsArr = await fetchContacts();
+    const updatedArr = contactsArr.filter(el => el.id !== contactId);
+    const stringifiedUpdatedArr = JSON.stringify(updatedArr, null, 4);
+    await fs.writeFile(contactsPath, stringifiedUpdatedArr)
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 const addContact = async (id, name, email, phone) => {

@@ -6,8 +6,6 @@ const {
   addContact,
 } = require("./contacts");
 const uId = require('uuid');
-// const ID = 
-// console.log(uId.v4(), '///id')
 
 const program = new Command();
 program
@@ -37,7 +35,7 @@ function invokeAction({ action, id, name, email, phone }) {
       break;
 
     case "remove":
-      // ... id
+      removeContact(id);
       break;
 
     default:
